@@ -1,0 +1,100 @@
+﻿@page
+@model iportfolio.Pages.myadmin.ShowProfoilRecordModel
+@{
+}
+<div class="container">
+    <form method="post" enctype="multipart/form-data">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <h1>
+                    Update Profoil
+                </h1>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <label class="form-label">Name : </label>
+                <input class="form-control" asp-for="profoil.Name">
+                <input class="form-control"  hidden asp-for="profoil.Id">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <label class="form-label">Birthday :</label>
+                <input class="form-control" asp-for="profoil.Birthday">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <label class="form-label">Age : </label>
+                <input class="form-control" asp-for="profoil.Age">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <label class="form-label">Website : </label>
+                <input class="form-control" asp-for="profoil.Website">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <label class="form-label">Degree : </label>
+                <input class="form-control" asp-for="profoil.Degree">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <label class="form-label">Phone : </label>
+                <input class="form-control" asp-for="profoil.Phone">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <label class="form-label">Email : </label>
+                <input class="form-control" asp-for="profoil.Email">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <label class="form-label">City : </label>
+                <input class="form-control" asp-for="profoil.City">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <label class="form-label">FreeLanceStatus : </label>
+                <input class="form-control" asp-for="profoil.FreelanceStatus">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <label class="form-label">Description one : </label>
+                <input class="form-control" asp-for="profoil.DescOne">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <label class="form-label">Description Two : </label>
+                <input class="form-control" asp-for="profoil.DescTwo">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <label class="form-label">Image : </label>
+                <img src="~/image/@Model.profoil?.Image"/>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <label class="form-label">Image : </label>
+                <input class="form-control" asp-for="profoil.Photo">
+                <input class="form-control" hidden asp-for="profoil.Image">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <input type="submit" value="update Profoil" class="btn btn-primary">
+            </div>
+        </div>
+    </form>
+</div>

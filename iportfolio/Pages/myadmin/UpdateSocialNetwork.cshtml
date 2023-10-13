@@ -1,0 +1,47 @@
+﻿@page
+@model iportfolio.Pages.myadmin.UpdateSocialNetworkModel
+@{
+}
+<div class="container">
+    <form method="post">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <h1>
+                    Update SocialNetwork
+                </h1>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <label class="form-label">Facebook</label>
+                <input class="form-control" asp-for="socialNetwork.Facebook">
+                <input class="form-control" hidden asp-for="socialNetwork.Id">
+
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <label class="form-label">Twitter</label>
+                <input class="form-control" asp-for="socialNetwork.Twitter">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <label class="form-label">LinkedIn</label>
+                <input class="form-control" asp-for="socialNetwork.LinkedIn">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <label class="form-label">Skype</label>
+                <input class="form-control" asp-for="socialNetwork.Skype">
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <input type="submit" value="Update SocailNetwork" class="btn btn-primary">
+            </div>
+        </div>
+    </form>
+</div>
