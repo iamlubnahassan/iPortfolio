@@ -18,9 +18,14 @@ namespace iportfolio.Pages.myadmin
         }
         public IActionResult OnPost(Facts facts)
         {
-            db.tbl_Fact.Add(facts);
-            db.SaveChanges();
-            return RedirectToPage("ShowFacts");
+            if(ModelState.IsValid)
+            {
+                db.tbl_Fact.Add(facts);
+                db.SaveChanges();
+                return RedirectToPage("ShowFacts");
+
+            }
+            return Page();
 
         }
     }

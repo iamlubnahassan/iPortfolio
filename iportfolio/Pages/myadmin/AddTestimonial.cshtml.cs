@@ -19,18 +19,25 @@ namespace iportfolio.Pages.myadmin
         public void OnGet()
         {
         }
-        public void OnPost(Testimonial testimonial) 
+        public IActionResult OnPost(Testimonial testimonial) 
         {
-            string ImageName = testimonial.Photo.FileName.ToString();
-            var FolderPath = Path.Combine(env.WebRootPath, "image");
-            var ImagePath= Path.Combine(FolderPath, ImageName);
-            FileStream fileStream = new (ImagePath,FileMode.Create);
-            testimonial.Photo.CopyTo(fileStream);
-            fileStream.Dispose();
-            testimonial.Image = ImageName;
+            if(ModelState.IsValid)
+            {
+                string ImageName = testimonial.Photo.FileName.ToString();
+                var FolderPath = Path.Combine(env.WebRootPath, "image");
+                var ImagePath = Path.Combine(FolderPath, ImageName);
+                FileStream fileStream = new(ImagePath, FileMode.Create);
+                testimonial.Photo.CopyTo(fileStream);
+                fileStream.Dispose();
+                testimonial.Image = ImageName;
 
-            db.tbl_testimonial.Add(testimonial);
-            db.SaveChanges();
+                db.tbl_testimonial.Add(testimonial);
+                db.SaveChanges();
+                
+
+            }
+            return Page();
+            
         }
     }
 }

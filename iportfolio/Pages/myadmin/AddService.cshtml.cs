@@ -18,9 +18,14 @@ namespace iportfolio.Pages.myadmin
         }
         public IActionResult OnPost(Service service)
         {
-            db.tbl_Service.Add(service);
-            db.SaveChanges();
-            return RedirectToPage("ShowService");
+            if(ModelState.IsValid)
+            {
+                db.tbl_Service.Add(service);
+                db.SaveChanges();
+                return RedirectToPage("ShowService");
+
+            }
+            return Page();
         }
     }
 }

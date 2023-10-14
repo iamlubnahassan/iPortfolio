@@ -19,9 +19,15 @@ namespace iportfolio.Pages.myadmin
         }
         public IActionResult OnPost(Experience experience)
         { 
-            db.tbl_Experience.Add(experience);
-            db.SaveChanges();
-            return RedirectToPage("ShowExperience");
+            if(ModelState.IsValid)
+            {
+                db.tbl_Experience.Add(experience);
+                db.SaveChanges();
+                return RedirectToPage("ShowExperience");
+
+            }
+            return Page();
+            
         }
     }
 }

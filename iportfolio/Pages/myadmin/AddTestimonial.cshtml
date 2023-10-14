@@ -15,24 +15,28 @@
             <div class="col-md-4">
                 <label class="form-label">Name : </label>
                 <input class="form-control" asp-for="testimonial.Name">
+                <span asp-validation-for="testimonial.Name" class="text-danger"></span>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <label class="form-label">Designation :</label>
                 <input class="form-control" asp-for="testimonial.Designation">
+                <span asp-validation-for="testimonial.Designation" class="text-danger"></span>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <label class="form-label">Testimonial: </label>
                 <input class="form-control" asp-for="testimonial.theTestimonial">
+                <span asp-validation-for="testimonial.theTestimonial" class="text-danger"></span>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <label class="form-label">Image : </label>
                 <input class="form-control" asp-for="testimonial.Photo">
+                <span asp-validation-for="testimonial.Photo" class="text-danger"></span>
             </div>
         </div>
         <div class="row justify-content-center">

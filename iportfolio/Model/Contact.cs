@@ -7,9 +7,11 @@ namespace iportfolio.Model
         public int Id { get; set; }
 
         [Required(ErrorMessage="please Enter Name")]
+        
         public string Name { get; set; }
 
         [Required(ErrorMessage = "please Enter Email")]
+        [EmailAddress(ErrorMessage ="Please Enter Email")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "please Enter subject")]
