@@ -13,10 +13,16 @@ namespace iportfolio.Pages.myadmin
         {
             db=_db;
         }
-        public void OnGet( int Id)
+        public IActionResult OnGet( int Id)
         {
             education = db.tbl_Education.Find(Id);
-          
+            var Verify = HttpContext.Session.GetString("flag");
+            if (Verify == null)
+            {
+                return RedirectToPage("../myadmin/Login");
+            }
+            return Page();
+
         }
         public IActionResult OnPost( Education education) 
         { 

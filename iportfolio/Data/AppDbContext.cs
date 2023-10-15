@@ -19,6 +19,7 @@ namespace iportfolio.Data
         public DbSet<Skill> tbl_Skill { get; set; }
         public DbSet<SocialNetwork> tbl_SocailNetwork { get; set; }
         public DbSet<Testimonial> tbl_testimonial { get; set; }
+        public DbSet<Login> tbl_Login { get; set; }
       
     }
 }

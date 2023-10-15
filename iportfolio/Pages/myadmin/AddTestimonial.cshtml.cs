@@ -16,8 +16,14 @@ namespace iportfolio.Pages.myadmin
             this.env = env;
 
         }
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            var Verify = HttpContext.Session.GetString("flag");
+            if (Verify == null)
+            {
+                return RedirectToPage("../myadmin/Login");
+            }
+            return Page();
         }
         public IActionResult OnPost(Testimonial testimonial) 
         {

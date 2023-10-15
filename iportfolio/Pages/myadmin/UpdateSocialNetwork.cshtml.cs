@@ -15,9 +15,15 @@ namespace iportfolio.Pages.myadmin
         {
             db= _db;    
         }
-        public void OnGet(int id)
+        public IActionResult OnGet(int id)
         {
             socialNetwork = db.tbl_SocailNetwork.Find(id);
+            var Verify = HttpContext.Session.GetString("flag");
+            if (Verify == null)
+            {
+                return RedirectToPage("../myadmin/Login");
+            }
+            return Page();
         }
         public IActionResult OnPost( SocialNetwork socialNetwork)
         {

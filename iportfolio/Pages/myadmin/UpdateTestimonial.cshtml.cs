@@ -16,9 +16,15 @@ namespace iportfolio.Pages.myadmin
             db = _db;
             this.env = env;
         }
-        public void OnGet(int Id)
+        public IActionResult OnGet(int Id)
         {
             testimonial = db.tbl_testimonial.Find(Id);
+            var Verify = HttpContext.Session.GetString("flag");
+            if (Verify == null)
+            {
+                return RedirectToPage("../myadmin/Login");
+            }
+            return Page();
         }
         public IActionResult OnPost(Testimonial testimonial)
         { 

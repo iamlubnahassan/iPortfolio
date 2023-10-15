@@ -13,9 +13,15 @@ namespace iportfolio.Pages.myadmin
         {
             db = _db;
         }
-        public void OnGet()
+        public IActionResult OnGet()
         {
             contact = db.tbl_Contact.ToList();
+            var Verify = HttpContext.Session.GetString("flag");
+            if (Verify == null)
+            {
+                return RedirectToPage("../myadmin/Login");
+            }
+            return Page();
         }
         public IActionResult OnGetDelete(int Id)
         { 
